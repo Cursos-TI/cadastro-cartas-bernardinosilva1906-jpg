@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Paises
-// Nivel Novato: cadastro e exibicao dos dados de duas cartas.
+// Nivel Aventureiro: cadastro, exibicao e calculos de duas cartas.
 
 int main(void) {
     // Variaveis que armazenam os dados da primeira carta.
@@ -12,6 +12,8 @@ int main(void) {
     float area1;
     float pib1;
     int pontosTuristicos1;
+    float densidadePopulacional1;
+    float pibPerCapita1;
 
     // Variaveis que armazenam os dados da segunda carta.
     char estado2;
@@ -21,6 +23,8 @@ int main(void) {
     float area2;
     float pib2;
     int pontosTuristicos2;
+    float densidadePopulacional2;
+    float pibPerCapita2;
 
     // Entrada dos dados da primeira carta.
     printf("=== CADASTRO DA CARTA 1 ===\n");
@@ -70,6 +74,13 @@ int main(void) {
     printf("Numero de pontos turisticos: ");
     scanf("%d", &pontosTuristicos2);
 
+    // Calculos das novas propriedades do nivel Aventureiro.
+    densidadePopulacional1 = (float) populacao1 / area1;
+    pibPerCapita1 = (pib1 * 1000000000.0f) / (float) populacao1;
+
+    densidadePopulacional2 = (float) populacao2 / area2;
+    pibPerCapita2 = (pib2 * 1000000000.0f) / (float) populacao2;
+
     // Saida organizada dos dados das duas cartas.
     printf("\nCarta 1:\n");
     printf("Estado: %c\n", estado1);
@@ -79,6 +90,8 @@ int main(void) {
     printf("Area: %.2f km2\n", area1);
     printf("PIB: %.2f bilhoes de reais\n", pib1);
     printf("Numero de Pontos Turisticos: %d\n", pontosTuristicos1);
+    printf("Densidade Populacional: %.2f hab/km2\n", densidadePopulacional1);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita1);
 
     printf("\nCarta 2:\n");
     printf("Estado: %c\n", estado2);
@@ -88,6 +101,8 @@ int main(void) {
     printf("Area: %.2f km2\n", area2);
     printf("PIB: %.2f bilhoes de reais\n", pib2);
     printf("Numero de Pontos Turisticos: %d\n", pontosTuristicos2);
+    printf("Densidade Populacional: %.2f hab/km2\n", densidadePopulacional2);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
 
     return 0;
 }
